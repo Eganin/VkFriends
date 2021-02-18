@@ -1,7 +1,8 @@
-package com.example.vkfriends
+package com.example.vkfriends.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.vkfriends.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
