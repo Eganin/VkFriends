@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VKFriends</string>
+    <string name="title">Вас приветствует приложение "Друзья Вк" Пожалуйста, нажмите кнопку Войти, чтобы увидеть ваших друзей</string>
+    <string name="button_title">Войти</string>
+</resources>
