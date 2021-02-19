@@ -14,7 +14,7 @@ class FriendsProvider(var presenter: FriendsPresenter) {
                         name = "sers",
                         surname = "srser",
                         city = null,
-                        avatar = "",
+                        avatar = "https://art-assorty.ru/wp-content/uploads/2019/08/258-1.jpg",
                         isOnline = true
                     )
                 )
