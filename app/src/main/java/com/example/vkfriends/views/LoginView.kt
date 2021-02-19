@@ -10,7 +10,7 @@ interface LoginView : MvpView {
 
     fun endLoading()
 
-    fun showError(text : String)
+    fun showError(text : Int)
 
     fun openFriends()
 }

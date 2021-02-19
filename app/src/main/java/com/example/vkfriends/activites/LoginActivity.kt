@@ -39,7 +39,7 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         binding.loginButton.isVisible = true
     }
 
-    override fun showError(text: String) =
+    override fun showError(text: Int) =
         Toast.makeText(this@LoginActivity, text, Toast.LENGTH_LONG).show()
 
     override fun openFriends() {
