@@ -42,8 +42,8 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
                 model.surname.contains(text, ignoreCase = false)
             ) {
                 mFriendsList.add(element = model)
-            }else {
-                if(model.city?.contains(text , ignoreCase = false)==true){
+            } else {
+                if (model.city?.contains(text, ignoreCase = false) == true) {
                     mFriendsList.add(element = model)
                 }
             }
@@ -64,7 +64,7 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
             with(itemBinding) {
                 loadImage(url = model.avatar ?: "")
                 friendTxtUsername.text = "${model.name} ${model.surname}"
-                friendTxtCity.text = model.city ?: "Unknown"
+                friendTxtCity.text = model.city ?: itemView.context.getString(R.string.no_city)
                 friendImgOnline.isVisible = model.isOnline
             }
         }

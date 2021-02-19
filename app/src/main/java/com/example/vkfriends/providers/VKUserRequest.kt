@@ -1,5 +1,6 @@
 package com.example.vkfriends.providers
 
+import android.util.Log
 import com.example.vkfriends.entities.Response
 import com.google.gson.Gson
 import com.google.gson.JsonParser
@@ -11,11 +12,12 @@ class VKUsersRequest(uids: IntArray = intArrayOf()) : VKRequest<Response>("frien
         if (uids.isNotEmpty()) {
             addParam("user_ids", uids.joinToString(","))
         }
-        addParam("fields", "photo_200")
+        addParam("fields", arrayListOf("online","city","photo_200"))
     }
 
     override fun parse(r: JSONObject): Response {
         val jsonParser = JsonParser.parseString(r.toString())
+        Log.d("AAA",jsonParser.toString())
         val model = Gson().fromJson(jsonParser, Response::class.java)
         return model
     }
