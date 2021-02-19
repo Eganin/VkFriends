@@ -12,6 +12,7 @@ import com.example.vkfriends.views.LoginView
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
 
+
 class LoginActivity : MvpAppCompatActivity(), LoginView {
 
     private var _binding: ActivityLoginBinding? = null

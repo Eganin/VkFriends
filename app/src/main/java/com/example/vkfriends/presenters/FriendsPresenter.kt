@@ -11,7 +11,7 @@ import com.example.vkfriends.views.FriendsView
 class FriendsPresenter : MvpPresenter<FriendsView>() {
     fun loadFriends() {
         viewState.startLoading()
-        FriendsProvider(presenter = this@FriendsPresenter).textLoadFriends(hasFriends = true)
+        FriendsProvider(presenter = this@FriendsPresenter).loadFriends()
     }
 
     fun friendsLoaded(friendsList : ArrayList<FriendModel>){
