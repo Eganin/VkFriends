@@ -3,6 +3,7 @@ package com.example.vkfriends.activites
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +14,8 @@ import com.example.vkfriends.databinding.ActivityFriendsBinding
 import com.example.vkfriends.models.FriendModel
 import com.example.vkfriends.presenters.FriendsPresenter
 import com.example.vkfriends.views.FriendsView
+
+
 
 class FriendsActivity : MvpAppCompatActivity(), FriendsView {
 

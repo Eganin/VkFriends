@@ -5,4 +5,5 @@
     <string name="hint_query">Enter your query here</string>
     <string name="no_items">У вас нет друзей :(</string>
     <string name="incorrect_data">"Ошибка при логине "</string>
+    <integer name="com_vk_sdk_AppId">7766561</integer>
 </resources>

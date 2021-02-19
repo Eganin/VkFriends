@@ -77,4 +77,7 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //VK
+    implementation "com.vk:androidsdk:2.4.0"
 }

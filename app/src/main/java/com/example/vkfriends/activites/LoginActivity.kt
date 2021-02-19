@@ -9,6 +9,8 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.vkfriends.databinding.ActivityLoginBinding
 import com.example.vkfriends.presenters.LoginPresenter
 import com.example.vkfriends.views.LoginView
+import com.vk.api.sdk.VK
+import com.vk.api.sdk.auth.VKScope
 
 class LoginActivity : MvpAppCompatActivity(), LoginView {
 
@@ -19,13 +21,13 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     @InjectPresenter
     lateinit var loginPresenter: LoginPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?)  {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener {
-            loginPresenter.login(isSuccess = true)
+            VK.login(this@LoginActivity, arrayListOf(VKScope.FRIENDS))
         }
     }
 
@@ -44,5 +46,16 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
 
     override fun openFriends() {
         startActivity(Intent(this@LoginActivity, FriendsActivity::class.java))
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (loginPresenter.loginVK(
+                requestCode = requestCode,
+                resultCode = resultCode,
+                data = data
+            )
+        ) {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 }

@@ -12,7 +12,8 @@ import com.example.vkfriends.models.FriendModel
 
 class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() {
 
-    private var mFriendsList: ArrayList<FriendModel> = ArrayList()
+    private var mFriendsList = ArrayList<FriendModel>()
+    private var mSourceList = ArrayList<FriendModel>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,13 +29,27 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
     override fun getItemCount() = mFriendsList.count()
 
     fun bindFriendsList(friendsList: ArrayList<FriendModel>) {
-        mFriendsList.clear()
-        mFriendsList.addAll(elements = friendsList)
+        mSourceList.clear()
+        mSourceList.addAll(elements = friendsList)
+        filter(text = "")
         notifyDataSetChanged()
     }
 
-    fun filter(text : String) {
-        TODO("Not yet implemented")
+    fun filter(text: String) {
+        mFriendsList.clear()
+        mSourceList.forEach { model ->
+            if (model.name.contains(text, ignoreCase = false) ||
+                model.surname.contains(text, ignoreCase = false)
+            ) {
+                mFriendsList.add(element = model)
+            }else {
+                if(model.city?.contains(text , ignoreCase = false)==true){
+                    mFriendsList.add(element = model)
+                }
+            }
+        }
+
+        notifyDataSetChanged()
     }
 
     inner class FriendsViewHolder(private val itemBinding: CellFriendBinding) :
