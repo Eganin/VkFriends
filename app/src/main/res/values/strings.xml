@@ -2,4 +2,5 @@
     <string name="app_name">VKFriends</string>
     <string name="title">Вас приветствует приложение "Друзья Вк" Пожалуйста, нажмите кнопку Войти, чтобы увидеть ваших друзей</string>
     <string name="button_title">Войти</string>
+    <string name="hint_query">Enter your query here</string>
 </resources>
